@@ -3,7 +3,7 @@ from tkinter import*
 from tkinter import messagebox
 import tkinter.font as tkFont
 
-
+#refactorizar el código , no permite el ingreso de  valores decimales 
 
 def sumar():
     try:
