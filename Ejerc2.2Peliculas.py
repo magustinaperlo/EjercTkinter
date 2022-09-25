@@ -1,10 +1,20 @@
 from tkinter import *
+from tkinter import messagebox
 import tkinter.font as tkFont
 
 
 def AñadirPeliculas():
-    ListaPelic.insert(END, nombrePeli.get())
-    nombrePeli.delete(0,END)
+      # entrada=input()
+    a = nombrePeli.get()
+    if (a.isspace() or len(a) <= 1):
+        messagebox.showinfo(message="El nombre de la película no debe comenzar con un espacio", title="Error")
+    else:
+        ListaPelic.insert(END,a)
+        nombrePeli.delete(0,END)
+
+
+    # ListaPelic.insert(END, nombrePeli.get())
+    # nombrePeli.delete(0,END)
 
     
 
