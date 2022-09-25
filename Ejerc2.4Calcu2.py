@@ -1,5 +1,13 @@
 from tkinter import*
+from tkinter import messagebox
 import tkinter.font as tkFont
+
+#se añade una validación para capturar la excepción si el usuario quiere dividir por Cero
+def Validar():
+    if(num2.get()>0):
+        res.set(num1.get()/num2.get())
+    else:
+        messagebox.showinfo(message="No es posible dividir por cero", title="Error")
 
 def Calcular():
 	n1 = num1.get()
@@ -12,7 +20,7 @@ def Calcular():
 	elif op==3:
 		res.set(n1*n2)
 	elif op==4:
-		res.set(n1/n2)
+		Validar()
 
 	    
 ventana=Tk()
@@ -73,10 +81,6 @@ rboton4.configure(font=fontEjemplo)
 BotonCalcular=Button(ventana,text="Calcular",command=Calcular,borderwidth=5,bg="#AC7088")
 BotonCalcular.place(x=150,y=300)
 BotonCalcular.configure(font=fontEjemplo)
-
-
-
-
 
 
 
